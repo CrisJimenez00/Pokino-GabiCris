@@ -10,5 +10,9 @@ package juego;
  * @author Cris
  */
 public enum Palos {
+    BASTOS, 
+    ESPADAS, 
+    COPAS, 
+    OROS;
     
 }
