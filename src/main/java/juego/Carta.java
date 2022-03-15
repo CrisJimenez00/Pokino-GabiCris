@@ -1,6 +1,7 @@
 package juego;
 
 import java.util.Objects;
+import java.util.Random;
 
 /**
  *
@@ -8,22 +9,50 @@ import java.util.Objects;
  */
 //Definición de la clase.
 public class Carta {
+
     //Atributos de la clase.
     private Palos palo;
     private int numero;
-    
-    //Constructor por defecto.
-    public Carta(){
+    private Random random;
+
+    public Carta generarCartaAleatoria() {
+        int numPalo = random.nextInt(4) + 1;
+        Carta carta = new Carta();
+        switch (numPalo) {
+            case 1:
+                carta.setPalo(Palos.BASTOS);
+                carta.setNumero(random.nextInt(12) + 1);
+                break;
+            case 2:
+                carta.setPalo(Palos.COPAS);
+                carta.setNumero(random.nextInt(12) + 1);
+                break;
+            case 3:
+                carta.setPalo(Palos.ESPADAS);
+                carta.setNumero(random.nextInt(12) + 1);
+                break;
+            case 4:
+                carta.setPalo(Palos.OROS);
+                carta.setNumero(random.nextInt(12) + 1);
+                break;
+
+        }
+
+        return carta;
     }
-    
+
+    //Constructor por defecto.
+    public Carta() {
+    }
+
     //Constructor parametrizado.
     public Carta(Palos palo, int numero) {
-        if(numero <= 12){
+        if (numero <= 12) {
             this.numero = numero;
         }
         this.palo = palo;
     }
-    
+
     //Getters y setters.
     public Palos getPalo() {
         return palo;
@@ -78,5 +107,5 @@ public class Carta {
     public String toString() {
         return "Carta{" + "palo=" + palo + ", numero=" + numero + '}';
     }
-    
+
 }

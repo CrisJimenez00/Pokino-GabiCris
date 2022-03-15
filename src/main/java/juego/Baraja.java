@@ -5,6 +5,7 @@
  */
 package juego;
 
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -18,6 +19,14 @@ public class Baraja {
 
     public Baraja() {
         this.baraja = new TreeSet<>();
+    }
+
+    public void rellenarBaraja() {
+        Carta carta = new Carta();
+        for (int i = 0; i < 200; i++) {
+            baraja.add(carta.generarCartaAleatoria());
+        }
+
     }
 
 }
